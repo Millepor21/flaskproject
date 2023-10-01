@@ -1,4 +1,4 @@
 .env
-heath_venv/
+health_venv/
 __pycache__/
 migrations/
