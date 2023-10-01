@@ -9,6 +9,7 @@ class AppointmentsSchema(Schema):
     patient_id = fields.Str(required=True)
     reason_for_appointment = fields.Str(required=True)
     time = fields.Str(required=True)
+    date = fields.Str(required=True)
     address = fields.Str(required=True)
 
 class DoctorsSchema(Schema):
@@ -40,6 +41,3 @@ class PrescriptionsSchema(Schema):
     num_refil = fields.Str(required=True)
     directions = fields.Str(required=True)
     price = fields.Str(required=True)
-
-
-

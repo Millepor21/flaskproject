@@ -12,6 +12,7 @@ class AppointmentModel(db.Model):
     email = db.Column(db.String, nullable=False)
     reason_for_appointment = db.Column(db.String, nullable=False)
     time = db.Column(db.String, nullable=False)
+    date = db.Column(db.String, nullable=False)
     address = db.Column(db.String, nullable=False)
     doctor_id = db.Column(db.Integer, db.ForeignKey('doctors.id'), nullable=False)
     patient_id = db.Column(db.Integer, db.ForeignKey('patients.id'), nullable=False)
