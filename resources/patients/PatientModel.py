@@ -3,7 +3,10 @@ from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 
 class PatientModel(db.Model):
-    id = db.Column(db.Integer, nullable=False)
+    
+    __tablename__ = 'patients'
+    
+    id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, nullable=False)
     password_hash = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False)

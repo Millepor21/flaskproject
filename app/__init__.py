@@ -27,7 +27,7 @@ from resources.doctors import routes
 from resources.patients import routes
 from resources.prescriptions import routes
 
-# from resources.appointments.AppointmentsModel import AppointmentModel
-# from resources.doctors.DoctorModel import DoctorModel
-# from resources.patients.PatientModel import PatientModel
-# from resources.prescriptions.PrescriptionModel import PrescriptionModel
+from resources.appointments.AppointmentsModel import AppointmentModel
+from resources.doctors.DoctorModel import DoctorModel
+from resources.patients.PatientModel import PatientModel
+from resources.prescriptions.PrescriptionModel import PrescriptionModel

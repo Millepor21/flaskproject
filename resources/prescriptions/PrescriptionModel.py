@@ -1,7 +1,10 @@
 from app import db 
 
 class PrescriptionModel(db.Model):
-    id = db.Column(db.Integer, nullable=False)
+    
+    __tablename__ = 'prescriptions'
+    
+    id = db.Column(db.Integer, primary_key=True)
     patient_id = db.Column(db.Integer, db.ForeignKey('patients.id'), nullable=False)
     doctor_id = db.Column(db.Integer, db.ForeignKey('doctors.id'), nullable=False)
     medication = db.Column(db.String, nullable=False)
