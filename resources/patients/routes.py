@@ -8,7 +8,6 @@ from .PatientModel import PatientModel
 @bp.route('/Patients')
 class PatientList(MethodView):
 
-    
     def get(self):
         pass
 
