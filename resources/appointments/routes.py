@@ -53,7 +53,8 @@ class Apointment(MethodView):
                 return a
             else:
                 abort(401, message="Unauthorized")
-        abort(400, message="Invalid Post Data")
+        abort(400, message="Invalid Appointment Data")
+
     @jwt_required()
     def delete(self, appointment_id):
         patient_id = get_jwt_identity()
@@ -62,5 +63,5 @@ class Apointment(MethodView):
             if a.patient_id == patient_id:
                 a.delete()
                 return {'message': 'Appointment Canceled'}, 202
-            abort(401, message="User doesn't have rights")
+            abort(401, message="User doesn't have right to remove")
         abort(400, message="Invalid Appointment Id")
