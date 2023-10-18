@@ -16,21 +16,28 @@ class DoctorsSchema(Schema):
     id = fields.Int(dump_only=True)
     last_name = fields.Str(required=True)
     username = fields.Str(required=True)
-    password = fields.Str(required=True)
+    password = fields.Str(required=True, load_only=True)
     email = fields.Str(required=True)
     specialty  = fields.Str(required=True)
+
+class AuthDoctorsSchema(Schema):
+    email = fields.Str(required=True)
+    password = fields.Str(required=True, load_only=True)
 
 class PatientsSchema(Schema):
     id = fields.Int(dump_only=True)
     username = fields.Str(required=True)
-    password = fields.Str(required=True)
+    password = fields.Str(required=True, load_only=True)
     email = fields.Str(required=True)
     first_name = fields.Str(required=True)
     last_name = fields.Str(required=True)
     dob = fields.Str(required=True)
     height = fields.Str()
     weight = fields.Str()
-    history = fields.Str()
+
+class AuthPatientsSchema(Schema):
+    username = fields.Str(required=True)
+    password = fields.Str(required=True, load_only=True)
 
 class PrescriptionsSchema(Schema):
     id = fields.Int(dump_only=True)

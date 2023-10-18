@@ -9,9 +9,9 @@ class DoctorModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String, nullable=True)
     last_name = db.Column(db.String, nullable=False)
-    username = db.Column(db.String, nullable=False)
+    username = db.Column(db.String, unique=True, nullable=False)
     password_hash = db.Column(db.String, nullable=False)
-    email = db.Column(db.String, nullable=False)
+    email = db.Column(db.String, unique=True, nullable=False)
     specialty = db.Column(db.String, nullable=False)
     
     def __repr__(self):
